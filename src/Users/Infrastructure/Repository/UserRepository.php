@@ -17,7 +17,7 @@ class UserRepository extends ServiceEntityRepository implements UserRepositoryIn
         parent::__construct($registry, User::class);
     }
 
-    public function add(User $user)
+    public function add(User $user): void
     {
         $this->_em->persist($user);
         $this->_em->flush();
@@ -27,4 +27,10 @@ class UserRepository extends ServiceEntityRepository implements UserRepositoryIn
     {
         return $this->find($ulid);
     }
+
+    public function findByEmail(string $email): ?User
+    {
+        return $this->findOneBy(['email' => $email]);
+    }
+
 }

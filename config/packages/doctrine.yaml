@@ -11,10 +11,10 @@ doctrine:
         default_connection:       default
         connections:
             default:
-                dbname: '%env(resolve:POSTGRES_DB)%'
-                user: '%env(resolve:POSTGRES_USER)%'
-                password: '%env(resolve:POSTGRES_PASSWORD)%'
-                host: '%env(resolve:POSTGRES_HOST)%'
+#                dbname: '%env(resolve:POSTGRES_DB)%'
+#                user: '%env(resolve:POSTGRES_USER)%'
+#                password: '%env(resolve:POSTGRES_PASSWORD)%'
+#                host: '%env(resolve:POSTGRES_HOST)%'
                 url: '%env(resolve:DATABASE_URL)%'
                 profiling_collect_backtrace: '%kernel.debug%'
                 use_savepoints: true
